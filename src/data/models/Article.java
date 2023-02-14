@@ -4,18 +4,17 @@ import java.time.LocalDateTime;
 
 public class Article {
     private int articleId;
+    private  int authorId;
     private String title;
     private String body;
-    private User userId;
     private final LocalDateTime dateTimeCreated;
 
-    public Article(int articleId, String title, String body, User userId) {
+    public Article(String title, String body, int authorId) {
         this.title = title;
         this.body = body;
-        this.userId = userId;
         this.dateTimeCreated = LocalDateTime.now();
-        articleId +=1;
-    }
+        this.authorId = authorId;}
+       //this.articleId = articleId;    }
 
     public int getArticleId() {
         return articleId;
@@ -23,6 +22,14 @@ public class Article {
 
     public void setArticleId(int articleId) {
         this.articleId = articleId;
+    }
+
+    public int getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
     }
 
     public String getTitle() {
@@ -41,15 +48,9 @@ public class Article {
         this.body = body;
     }
 
-    public User getUserId() {
-        return userId;
-    }
 
-
-    public void setId(int i) {
-    }
-
-    public void setAuthorId(int i) {
+    public LocalDateTime getDateTimeCreated() {
+        return dateTimeCreated;
     }
 }
 
